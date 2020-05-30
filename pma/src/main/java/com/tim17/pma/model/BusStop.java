@@ -1,15 +1,15 @@
 package com.tim17.pma.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -21,7 +21,7 @@ import lombok.Setter;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
-public class Route {
+public class BusStop {
 
 	@EqualsAndHashCode.Include
 	@Id
@@ -32,15 +32,13 @@ public class Route {
 	private String name;
 	
 	@Column(nullable = false)
-	private String description;
+	private Double lat;
 	
 	@Column(nullable = false)
-	private String city;
+	private Double lng;
 	
-	@OneToMany(mappedBy="route", fetch = FetchType.LAZY, orphanRemoval = true)
-	private Set<BusStop> busStops = new HashSet<>();
-	
-	@OneToMany(mappedBy="route", fetch = FetchType.LAZY, orphanRemoval = true)
-	private Set<Timetable> timetables = new HashSet<>();
-	
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(nullable = false)
+	private Route route;
 }
