@@ -13,7 +13,7 @@ INSERT INTO timetable(id, type, content, route_id) VALUES (3, 'Nedelja', '4:30;5
 
 /* Linija 1B */
 
-INSERT INTO route(id, name, description, city) VALUES (2, '1B', 'Opis 2B', 'Novi Sad');
+INSERT INTO route(id, name, description, city) VALUES (2, '1B', 'Opis 1B', 'Novi Sad');
 
 
 /* Linija 2 */
@@ -21,9 +21,23 @@ INSERT INTO route(id, name, description, city) VALUES (2, '1B', 'Opis 2B', 'Novi
 INSERT INTO route(id, name, description, city) VALUES (3, '2', 'Opis 2', 'Novi Sad');
 
 
-/* Linija 3 */
+/* Linija 4  */
 
-INSERT INTO route(id, name, description, city) VALUES (4, '3', 'Opis 3', 'Novi Sad');
+INSERT INTO route(id, name, description, city) VALUES (4, '4A', 'LIMAN IV-CENTAR-Z.STANICA', 'Novi Sad');
+
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (401, 45.237077, 19.826358, 'NARODNOG FRONTA - OKRETNICA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (402, 45.237335, 19.8275452, 'NARODNOG FRONTA - IVE ANDRIĆA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (403, 45.238850, 19.833226, 'NARODNOG FRONTA - BALZAKOVA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (404, 45.240295, 19.838378, 'NARODNOG FRONTA - ŠEKSPIROVA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (405, 45.241713, 19.843342, 'NARODNOG FRONTA - BUL. OSLOBOĐENJA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (406, 45.242781, 19.847567, 'FRUŠKOGORSKA - DR. I. ĐURIČIĆA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (407, 45.248134, 19.849265, 'STRAŽILOVSKA - URBIS', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (408, 45.2528081, 19.8474871, 'ŽARKA ZRENJANINA - IZVRŠNO VEĆE', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (409, 45.2534782, 19.8442026, 'BUL. MIHAJLA PUPINA - POTHODNIK', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (410, 45.2524846, 19.8368103, 'BUL. OSLOBOĐENJA - FUTOŠKA PIJACA', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (411, 45.255619, 19.835147, 'BUL. OSLOBOĐENJA - POKRAJINSKI SUP', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (412, 45.261291, 19.831993, 'BUL. OSLOBOĐENJA - KRALJA PETRA I', 4);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (413, 45.264936, 19.830157, 'ŽELEZNIČKA STANICA - DOLASCI', 4);
 
 
 /* Linija 7A */
