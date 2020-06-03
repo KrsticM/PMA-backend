@@ -31,7 +31,7 @@ public class Timetable {
 	@Column(nullable = false)
 	private String type;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition="text")
 	private String content;
 	
 	@JsonIgnore
