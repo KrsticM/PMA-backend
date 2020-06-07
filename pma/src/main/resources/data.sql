@@ -82,3 +82,12 @@ INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (525, 45.242123, 19.79
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (526, 45.245108, 19.794768, 'BUL. KNEZA MILOŠA - FUTOŠKI PUT', 5);
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (527, 45.247161, 19.793546, 'BUL. KNEZA MILOŠA - GARAŽA GSP - A', 5);
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (528, 45.248899, 19.791502, 'NOVO NASELJE - BISTRICA - OKRETNICA', 5);
+
+INSERT INTO database_version(id, version) VALUES (999, 4);
+
+INSERT INTO news(id, content, title) VALUES (1, 'Some content', 'Some title');
+
+INSERT INTO news(id, content, title) VALUES (2, 'Some content2', 'Some title2');
+
+/* Linija 7A */
+INSERT INTO route(id, name, description, city) VALUES (55, '55', 'Opis linije beograd', 'Beograd');
