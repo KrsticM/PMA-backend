@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.javatuples.Pair;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,15 +19,23 @@ import com.tim17.pma.dto.Position;
 @RestController
 public class BusPositionController {
 
-	private static Position pos4 = new Position(19.82636, 45.23707);
-	private static int indexPos4 = 0;
+	private static Position pos4_bus052 = new Position(19.82636, 45.23707);
+	private static Position pos4_bus053 = new Position(19.82636, 45.23707);
+	private static Position pos4_bus054 = new Position(19.82636, 45.23707);
+	private static Integer indexPos4_bus052 = 0;
+	private static Integer indexPos4_bus053 = 61;
+	private static Integer indexPos4_bus054 = 122;
 
 	private static Position pos7 = new Position(1.0, 1.0);
 	private List<Position> positions4;
 
 	@RequestMapping(value = "/4", method = RequestMethod.GET)
 	public ResponseEntity<?> getPosition4() {
-		return new ResponseEntity<>(pos4, HttpStatus.OK);
+		List<Position> positions = new ArrayList<Position>();
+		positions.add(pos4_bus052);
+		positions.add(pos4_bus053);
+		positions.add(pos4_bus054);
+		return new ResponseEntity<>(positions, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/7", method = RequestMethod.GET)
@@ -38,17 +47,34 @@ public class BusPositionController {
 	public void changePosition() {
 		System.out.println("Scheduled");
 		
-		pos4.setX(positions4.get(indexPos4).getX());
-		pos4.setY(positions4.get(indexPos4).getY());
+		Pair<Position, Integer> value = movePosition(pos4_bus052, positions4, indexPos4_bus052);
+		pos4_bus052 = value.getValue0();
+		indexPos4_bus052 = value.getValue1();
 		
-		indexPos4++;
-		if (indexPos4 + 1 == positions4.size()) {
+		Pair<Position, Integer> value2 = movePosition(pos4_bus053, positions4, indexPos4_bus053);
+		pos4_bus053 = value2.getValue0();
+		indexPos4_bus053 = value2.getValue1();
+		
+		Pair<Position, Integer> value3 = movePosition(pos4_bus054, positions4, indexPos4_bus054);
+		pos4_bus054 = value3.getValue0();
+		indexPos4_bus054 = value3.getValue1();
+	}
+	
+	private Pair<Position, Integer> movePosition(Position busPosition, List<Position> positions, Integer index) {
+		
+		Position currentPosition = positions.get(index);
+		
+		busPosition.setX(currentPosition.getX());
+		busPosition.setY(currentPosition.getY());
+		
+		index++;
+		
+		if (index + 1 == positions.size()) {
 			System.out.println("Restart");
-			indexPos4 = 0; // Kada dodje do kraja vrati ga na pocetak
+			index = 0; // Kada dodje do kraja vrati ga na pocetak
 		}
 		
-		
-
+		return new Pair<Position, Integer>(busPosition, index);
 	}
 
 	@PostConstruct
@@ -59,17 +85,11 @@ public class BusPositionController {
 		positions4.add(new Position(45.23703, 19.8262));
 		positions4.add(new Position(45.237, 19.82616));
 		positions4.add(new Position(45.23695, 19.82614));
-
 		positions4.add(new Position(45.23689, 19.82616));
-
 		positions4.add(new Position(45.23685, 19.82623));
-
 		positions4.add(new Position(45.23685, 19.82631));
-
 		positions4.add(new Position(45.23689, 19.82637));
-
 		positions4.add(new Position(45.23696, 19.8264));
-
 		positions4.add(new Position(45.23704, 19.8266));
 		positions4.add(new Position(45.23731, 19.82756));
 		positions4.add(new Position(45.23771, 19.82897));
@@ -245,7 +265,6 @@ public class BusPositionController {
 		positions4.add(new Position(45.26459, 19.83028));
 		positions4.add(new Position(45.26492, 19.83011));
 		positions4.add(new Position(45.23699, 19.83111));
-
 	}
 
 }
