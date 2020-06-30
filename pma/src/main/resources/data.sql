@@ -89,5 +89,5 @@ INSERT INTO news(id, content, title) VALUES (1, 'Some content', 'Some title');
 
 INSERT INTO news(id, content, title) VALUES (2, 'Some content2', 'Some title2');
 
-/* Linija 7A */
+/* Linija BG */
 INSERT INTO route(id, name, description, city) VALUES (55, '55', 'Opis linije beograd', 'Beograd');
