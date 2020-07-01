@@ -34,11 +34,21 @@ public class BusPositionController {
 	private static Integer indexPos7_bus073 = 110; // 110
 	private static Integer indexPos7_bus074 = 220; // 220
 	
+	private static Position pos12_bus0121 = new Position(45.25503, 19.8414);
+	private static Position pos12_bus0122 = new Position(45.25503, 19.8414);
+	private static Position pos12_bus0123 = new Position(45.25503, 19.8414);
+	private static Integer indexPos12_bus0121 = 0;
+	private static Integer indexPos12_bus0122 = 62; // 110
+	private static Integer indexPos12_bus0123 = 124; // 220
+	
 	private List<Position> positions4;
 	private List<Position> positions7;
+	private List<Position> positions12;
 
 	@RequestMapping(value = "/4", method = RequestMethod.GET)
 	public ResponseEntity<?> getPosition4() {
+		System.out.println("pogodio 4");
+
 		List<Position> positions = new ArrayList<Position>();
 		positions.add(pos4_bus052);
 		positions.add(pos4_bus053);
@@ -49,6 +59,7 @@ public class BusPositionController {
 
 	@RequestMapping(value = "/7", method = RequestMethod.GET)
 	public ResponseEntity<?> getPosition7() {
+		System.out.println("pogodio 7");
 		
 		List<Position> positions = new ArrayList<Position>();
 		positions.add(pos7_bus072);
@@ -58,6 +69,18 @@ public class BusPositionController {
 		return new ResponseEntity<>(position, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/12", method = RequestMethod.GET)
+	public ResponseEntity<?> getPosition12() {
+		System.out.println("pogodio 12");
+		
+		List<Position> positions = new ArrayList<Position>();
+		positions.add(pos12_bus0121);
+		positions.add(pos12_bus0122);
+		positions.add(pos12_bus0123);
+		Positions position = new Positions(positions);
+		return new ResponseEntity<>(position, HttpStatus.OK);
+	}
+	
 	@Scheduled(fixedRate = 900)
 	public void changePosition() {
 		
@@ -73,7 +96,7 @@ public class BusPositionController {
 		pos4_bus054 = value3.getValue0();
 		indexPos4_bus054 = value3.getValue1();
 		
-		System.out.println("BUS POSITION: " + indexPos7_bus072);
+		// System.out.println("BUS POSITION: " + indexPos7_bus072);
 		Pair<Position, Integer> value4 = movePosition(pos7_bus072, positions7, indexPos7_bus072);
 		pos7_bus072 = value4.getValue0();
 		indexPos7_bus072 = value4.getValue1();
@@ -85,6 +108,18 @@ public class BusPositionController {
 		Pair<Position, Integer> value6 = movePosition(pos7_bus074, positions7, indexPos7_bus074);
 		pos7_bus074 = value6.getValue0();
 		indexPos7_bus074 = value6.getValue1();
+			
+		Pair<Position, Integer> value7 = movePosition(pos12_bus0121, positions12, indexPos12_bus0121);
+		pos12_bus0121 = value7.getValue0();
+		indexPos12_bus0121 = value7.getValue1();
+		
+		Pair<Position, Integer> value8 = movePosition(pos12_bus0122, positions12, indexPos12_bus0122);
+		pos12_bus0122 = value8.getValue0();
+		indexPos12_bus0122 = value8.getValue1();
+		
+		Pair<Position, Integer> value9 = movePosition(pos12_bus0123, positions12, indexPos12_bus0123);
+		pos12_bus0123 = value9.getValue0();
+		indexPos12_bus0123 = value9.getValue1();
 	}
 	
 	private Pair<Position, Integer> movePosition(Position busPosition, List<Position> positions, Integer index) {
@@ -97,7 +132,7 @@ public class BusPositionController {
 		index++;
 		
 		if (index + 1 == positions.size()) {
-			System.out.println("Restart");
+			//System.out.println("Restart");
 			index = 0; // Kada dodje do kraja vrati ga na pocetak
 		}
 		
@@ -628,6 +663,198 @@ public class BusPositionController {
 		positions7.add(new Position(45.24904, 19.79218));
 		positions7.add(new Position(45.24911, 19.79212));
 		positions7.add(new Position(45.24906, 19.792));
+		
+		
+		// 12ica
+		positions12 = new ArrayList<>();
+		positions12.add(new Position(45.25503, 19.8414));
+		positions12.add(new Position(45.25503, 19.84141));
+		positions12.add(new Position(45.255, 19.84161));
+		positions12.add(new Position(45.255, 19.84174));
+		positions12.add(new Position(45.255, 19.84184));
+		positions12.add(new Position(45.255, 19.84184));
+		positions12.add(new Position(45.25484, 19.84196));
+		positions12.add(new Position(45.25447, 19.84222));
+		positions12.add(new Position(45.25442, 19.84225));
+		positions12.add(new Position(45.25429, 19.84235));
+		positions12.add(new Position(45.25429, 19.84235));
+		positions12.add(new Position(45.25426, 19.84238));
+		positions12.add(new Position(45.25421, 19.84242));
+		positions12.add(new Position(45.25407, 19.84252));
+		positions12.add(new Position(45.25406, 19.84253));
+		positions12.add(new Position(45.25403, 19.84256));
+		positions12.add(new Position(45.25398, 19.8426));
+		positions12.add(new Position(45.2539, 19.84268));
+		positions12.add(new Position(45.2538, 19.8428));
+		positions12.add(new Position(45.25377, 19.84284));
+		positions12.add(new Position(45.25372, 19.84292));
+		positions12.add(new Position(45.25364, 19.84304));
+		positions12.add(new Position(45.25364, 19.84306));
+		positions12.add(new Position(45.25358, 19.84317));
+		positions12.add(new Position(45.25355, 19.84323));
+		positions12.add(new Position(45.2535, 19.84333));
+		positions12.add(new Position(45.25347, 19.8434));
+		positions12.add(new Position(45.25345, 19.84349));
+		positions12.add(new Position(45.25342, 19.84361));
+		positions12.add(new Position(45.2534, 19.84375));
+		positions12.add(new Position(45.25339, 19.84377));
+		positions12.add(new Position(45.25337, 19.84396));
+		positions12.add(new Position(45.25336, 19.8442));
+		positions12.add(new Position(45.25336, 19.84426));
+		positions12.add(new Position(45.25336, 19.84426));
+		positions12.add(new Position(45.25336, 19.84443));
+		positions12.add(new Position(45.25337, 19.84452));
+		positions12.add(new Position(45.25338, 19.84468));
+		positions12.add(new Position(45.25346, 19.84545));
+		positions12.add(new Position(45.25354, 19.84632));
+		positions12.add(new Position(45.25361, 19.84705));
+		positions12.add(new Position(45.25361, 19.84705));
+		positions12.add(new Position(45.25361, 19.84731));
+		positions12.add(new Position(45.25361, 19.84732));
+		positions12.add(new Position(45.2536, 19.84738));
+		positions12.add(new Position(45.25358, 19.84748));
+		positions12.add(new Position(45.25354, 19.84755));
+		positions12.add(new Position(45.25349, 19.84759));
+		positions12.add(new Position(45.25341, 19.84763));
+		positions12.add(new Position(45.25341, 19.84763));
+		positions12.add(new Position(45.25336, 19.84763));
+		positions12.add(new Position(45.2533, 19.84761));
+		positions12.add(new Position(45.25319, 19.84757));
+		positions12.add(new Position(45.25299, 19.84749));
+		positions12.add(new Position(45.25284, 19.84743));
+		positions12.add(new Position(45.25255, 19.84732));
+		positions12.add(new Position(45.25247, 19.84729));
+		positions12.add(new Position(45.25247, 19.84729));
+		positions12.add(new Position(45.25214, 19.84717));
+		positions12.add(new Position(45.25175, 19.84703));
+		positions12.add(new Position(45.25175, 19.84703));
+		positions12.add(new Position(45.25171, 19.84698));
+		positions12.add(new Position(45.25167, 19.84695));
+		positions12.add(new Position(45.25159, 19.84692));
+		positions12.add(new Position(45.25152, 19.8469));
+		positions12.add(new Position(45.25139, 19.84685));
+		positions12.add(new Position(45.25126, 19.84679));
+		positions12.add(new Position(45.25115, 19.84669));
+		positions12.add(new Position(45.25112, 19.84667));
+		positions12.add(new Position(45.25093, 19.84645));
+		positions12.add(new Position(45.25087, 19.84638));
+		positions12.add(new Position(45.25068, 19.84615));
+		positions12.add(new Position(45.2504, 19.84577));
+		positions12.add(new Position(45.25011, 19.84536));
+		positions12.add(new Position(45.24987, 19.84494));
+		positions12.add(new Position(45.24987, 19.84494));
+		positions12.add(new Position(45.24949, 19.84522));
+		positions12.add(new Position(45.24949, 19.84522));
+		positions12.add(new Position(45.24936, 19.84478));
+		positions12.add(new Position(45.24936, 19.84466));
+		positions12.add(new Position(45.24936, 19.84465));
+		positions12.add(new Position(45.24918, 19.84409));
+		positions12.add(new Position(45.24907, 19.84367));
+		positions12.add(new Position(45.24891, 19.84302));
+		positions12.add(new Position(45.2489, 19.843));
+		positions12.add(new Position(45.24884, 19.8427));
+		positions12.add(new Position(45.24882, 19.84259));
+		positions12.add(new Position(45.24875, 19.84228));
+		positions12.add(new Position(45.24875, 19.84228));
+		positions12.add(new Position(45.24872, 19.84218));
+		positions12.add(new Position(45.24863, 19.84176));
+		positions12.add(new Position(45.24857, 19.84154));
+		positions12.add(new Position(45.24819, 19.83994));
+		positions12.add(new Position(45.24805, 19.83935));
+		positions12.add(new Position(45.24803, 19.83925));
+		positions12.add(new Position(45.24803, 19.83925));
+		positions12.add(new Position(45.24799, 19.83908));
+		positions12.add(new Position(45.24788, 19.83914));
+		positions12.add(new Position(45.24755, 19.83932));
+		positions12.add(new Position(45.24755, 19.83932));
+		positions12.add(new Position(45.24747, 19.83936));
+		positions12.add(new Position(45.24668, 19.8398));
+		positions12.add(new Position(45.24652, 19.83989));
+		positions12.add(new Position(45.24618, 19.84008));
+		positions12.add(new Position(45.24386, 19.84138));
+		positions12.add(new Position(45.24386, 19.84138));
+		positions12.add(new Position(45.24375, 19.84092));
+		positions12.add(new Position(45.24375, 19.84092));
+		positions12.add(new Position(45.24357, 19.84024));
+		positions12.add(new Position(45.24342, 19.83961));
+		positions12.add(new Position(45.24264, 19.83654));
+		positions12.add(new Position(45.24253, 19.83606));
+		positions12.add(new Position(45.24253, 19.83606));
+		positions12.add(new Position(45.24215, 19.83433));
+		positions12.add(new Position(45.24204, 19.83383));
+		positions12.add(new Position(45.24198, 19.83357));
+		positions12.add(new Position(45.24145, 19.83114));
+		positions12.add(new Position(45.24141, 19.83099));
+		positions12.add(new Position(45.24129, 19.83051));
+		positions12.add(new Position(45.24129, 19.83051));
+		positions12.add(new Position(45.24093, 19.82906));
+		positions12.add(new Position(45.24052, 19.82753));
+		positions12.add(new Position(45.24022, 19.82638));
+		positions12.add(new Position(45.24006, 19.82582));
+		positions12.add(new Position(45.23996, 19.82544));
+		positions12.add(new Position(45.23996, 19.82544));
+		positions12.add(new Position(45.23993, 19.82532));
+		positions12.add(new Position(45.23981, 19.82534));
+		positions12.add(new Position(45.23945, 19.82547));
+		positions12.add(new Position(45.23945, 19.82547));
+		positions12.add(new Position(45.23887, 19.82568));
+		positions12.add(new Position(45.23887, 19.82568));
+		positions12.add(new Position(45.23878, 19.82508));
+		positions12.add(new Position(45.23871, 19.82444));
+		positions12.add(new Position(45.23866, 19.82421));
+		positions12.add(new Position(45.23863, 19.82407));
+		positions12.add(new Position(45.23862, 19.82399));
+		positions12.add(new Position(45.2386, 19.82393));
+		positions12.add(new Position(45.23859, 19.82388));
+		positions12.add(new Position(45.23857, 19.82384));
+		positions12.add(new Position(45.23855, 19.82381));
+		positions12.add(new Position(45.23853, 19.82375));
+		positions12.add(new Position(45.23848, 19.82367));
+		positions12.add(new Position(45.23843, 19.82359));
+		positions12.add(new Position(45.23832, 19.82343));
+		positions12.add(new Position(45.23794, 19.82285));
+		positions12.add(new Position(45.23732, 19.8219));
+		positions12.add(new Position(45.23723, 19.82176));
+		positions12.add(new Position(45.23723, 19.82176));
+		positions12.add(new Position(45.23616, 19.82011));
+		positions12.add(new Position(45.23526, 19.81871));
+		positions12.add(new Position(45.23502, 19.81835));
+		positions12.add(new Position(45.23486, 19.8181));
+		positions12.add(new Position(45.23486, 19.8181));
+		positions12.add(new Position(45.23415, 19.81698));
+		positions12.add(new Position(45.23405, 19.81683));
+		positions12.add(new Position(45.23405, 19.81683));
+		positions12.add(new Position(45.23419, 19.81527));
+		positions12.add(new Position(45.23427, 19.81451));
+		positions12.add(new Position(45.23432, 19.81408));
+		positions12.add(new Position(45.23432, 19.81408));
+		positions12.add(new Position(45.23438, 19.81351));
+		positions12.add(new Position(45.23439, 19.81349));
+		positions12.add(new Position(45.23461, 19.81114));
+		positions12.add(new Position(45.23461, 19.81113));
+		positions12.add(new Position(45.23471, 19.8101));
+		positions12.add(new Position(45.23471, 19.8101));
+		positions12.add(new Position(45.23499, 19.81015));
+		positions12.add(new Position(45.23499, 19.81015));
+		positions12.add(new Position(45.23543, 19.81024));
+		positions12.add(new Position(45.23555, 19.81026));
+		positions12.add(new Position(45.23641, 19.81044));
+		positions12.add(new Position(45.23641, 19.81044));
+		positions12.add(new Position(45.23661, 19.80838));
+		positions12.add(new Position(45.23661, 19.80838));
+		positions12.add(new Position(45.23721, 19.8085));
+		positions12.add(new Position(45.23721, 19.8085));
+		positions12.add(new Position(45.23741, 19.80854));
+		positions12.add(new Position(45.2383, 19.80871));
+		positions12.add(new Position(45.2383, 19.80871));
+		positions12.add(new Position(45.2384, 19.80764));
+		positions12.add(new Position(45.2384, 19.80764));
+		positions12.add(new Position(45.23851, 19.80654));
+		positions12.add(new Position(45.23851, 19.80654));
+		positions12.add(new Position(45.23767, 19.80638));
+		positions12.add(new Position(45.23765, 19.80638));
+		positions12.add(new Position(45.23711, 19.80628));
+
 	}
 
 }

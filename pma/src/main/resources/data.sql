@@ -83,6 +83,26 @@ INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (526, 45.245108, 19.79
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (527, 45.247161, 19.793546, 'BUL. KNEZA MILOŠA - GARAŽA GSP - A', 5);
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (528, 45.248899, 19.791502, 'NOVO NASELJE - BISTRICA - OKRETNICA', 5);
 
+/* Linija 11A */
+INSERT INTO route(id, name, description, city) VALUES (6, '12A', 'CENTAR - TELEP', 'Novi Sad');
+
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (600, 45.2550663, 19.8414141, 'USPENSKA - ŠAFARIKOVA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (601, 45.2533043, 19.8442635, 'BUL. MIHAJLA PUPINA - POTHODNIK', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (602, 45.2524775, 19.8472283, 'ŽARKA ZRENJANINA - OPŠTINA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (603, 45.2488393, 19.8422326, 'MAKSIMA GORKOG - SREMSKA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (604, 45.2475308, 19.8392650, 'BUL. OSLOBOĐENJA - BRAĆE RIBNIKAR', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (605, 45.2438057, 19.8408918, 'BUL. CARA LAZARA - BUL. OSLOBOĐENJA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (606, 45.2425921, 19.8360309, 'BUL. CARA LAZARA - PUŠKINOVA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (607, 45.2413304, 19.8304869, 'BUL. CARA LAZARA - DOM ZDRAVLJA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (608, 45.2394307, 19.8253587, 'IVE ANDRIĆA - BULEVAR EVROPE', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (609, 45.2372705, 19.8217106, 'HEROJA PINKIJA - LAZE LAZAREVIĆA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (610, 45.2348387, 19.8181175, 'HEROJA PINKIJA - MORNARSKA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (611, 45.2343096, 19.814076, 'KOTORSKA - BRAĆE MILADINOV', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (612, 45.2349875, 19.8101823, 'FEJEŠ KLARE - KOTORSKA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (613, 45.2372084, 19.808521, 'ŠARPLANINSKA - O.Š. JOŽEF ATILA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (614, 45.2384105,19.8076459, 'ŠARPLANINSKA - ČIRILA I METODIJA', 6);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (6115, 45.2371101, 19.8062972, 'SENTELEKI KORNELA - O.Š. JOŽEF ATILA', 6);
+
 INSERT INTO database_version(id, version) VALUES (999, 4);
 
 INSERT INTO news(id, content, title) VALUES (1, 'Some content', 'Some title');
