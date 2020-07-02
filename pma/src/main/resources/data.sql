@@ -105,9 +105,14 @@ INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (6115, 45.2371101, 19.
 
 INSERT INTO database_version(id, version) VALUES (999, 4);
 
-INSERT INTO news(id, content, title) VALUES (1, 'Some content', 'Some title');
-
-INSERT INTO news(id, content, title) VALUES (2, 'Some content2', 'Some title2');
+INSERT INTO news(id, content, title) VALUES (1, 'Linija 9 od 12.01.2020 menja putanju do daljnjeg.','Promena linije 9');
+INSERT INTO news(id, content, title) VALUES (2, 'Redovi polazaka biće izmenjeni za prvi maj.','Prvomajski praznik');
+INSERT INTO news(id, content, title) VALUES (3, 'Sve linije koje prolaze preko Mosta Slobode ići će zaobilaznicom dana 31.05.2020.','Trka na Mišeluku');
+INSERT INTO news(id, content, title) VALUES (4, 'Uži gradski centar biće zatvoren za prevoz zbog Novosadnsog maratona','Izmena linija zbog maratona');
+INSERT INTO news(id, content, title) VALUES (5, 'Zbog radova u bul. Cara Lazara autobusi na liniji 12 kretaće se imenjenom trasom','Promena linije 12');
+INSERT INTO news(id, content, title) VALUES (6, 'Proverite vreme polazaka linije 6, biće izmenjeni u letnjem periodu','Promena vremena polaska linije 6');
+INSERT INTO news(id, content, title) VALUES (7, 'Molimo sve putnike da se pridržavaju preporuka datih od strane nadležnih institucija vezane za zaštitnu opremu u javnom prevozu', 'Korona');
+INSERT INTO news(id, content, title) VALUES (8, 'U autobusu ne sme raditi klima dok pandemija Korona virusa traje.','Klima');
 
 /* Linija BG */
 INSERT INTO route(id, name, description, city) VALUES (55, '55', 'Opis linije beograd', 'Beograd');
