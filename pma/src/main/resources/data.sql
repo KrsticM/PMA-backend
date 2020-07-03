@@ -2,9 +2,8 @@
 
 INSERT INTO route(id, name, description, city) VALUES (1, '1A', 'Opis 1A', 'Novi Sad');
 
-INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (1, 10, 10, 'SENTANDREJSKI PUT - ZMAJEVAČKI PUT', 1);
-INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (2, 10, 10, 'SENTANDREJSKI PUT - SAVSKA', 1);
-INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (3, 10, 10, 'SENTANDREJSKI PUT - VELEBITSKA', 1);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (1, 45.237077, 19.826358, 'NARODNOG FRONTA - OKRETNICA', 1);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (1001, 45.237335, 19.8275452, 'NARODNOG FRONTA - IVE ANDRIĆA', 1);
 
 INSERT INTO timetable(id, type, content, route_id) VALUES (1, 'Radni dan', '4:30;5:00 5:15 5:36 5:45 5:54;6:00 6:10 6:18 6:30 6:36 6:48 6:55;7:03 7:15 7:24 7:33 7:42 7:49', 1);
 INSERT INTO timetable(id, type, content, route_id) VALUES (2, 'Subota', '4:30;5:00 5:15 5:36 5:45 5:54;6:00 6:10 6:18 6:30 6:36 6:48 6:55;7:03 7:15 7:24 7:33 7:42 7:49', 1);
@@ -14,12 +13,14 @@ INSERT INTO timetable(id, type, content, route_id) VALUES (3, 'Nedelja', '4:30;5
 /* Linija 1B */
 
 INSERT INTO route(id, name, description, city) VALUES (2, '1B', 'Opis 1B', 'Novi Sad');
-
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (111, 45.237077, 19.826358, 'NARODNOG FRONTA - OKRETNICA', 2);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (2002, 45.237335, 19.8275452, 'NARODNOG FRONTA - IVE ANDRIĆA', 2);
 
 /* Linija 2 */
 
 INSERT INTO route(id, name, description, city) VALUES (3, '2', 'Opis 2', 'Novi Sad');
-
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (112, 45.237077, 19.826358, 'NARODNOG FRONTA - OKRETNICA', 3);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (3003, 45.237335, 19.8275452, 'NARODNOG FRONTA - IVE ANDRIĆA', 3);
 
 /* Linija 4A  */
 
@@ -103,7 +104,7 @@ INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (613, 45.2372084, 19.8
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (614, 45.2384105,19.8076459, 'ŠARPLANINSKA - ČIRILA I METODIJA', 6);
 INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (6115, 45.2371101, 19.8062972, 'SENTELEKI KORNELA - O.Š. JOŽEF ATILA', 6);
 
-INSERT INTO database_version(id, version) VALUES (999, 4);
+INSERT INTO database_version(id, version) VALUES (999, 45);
 
 INSERT INTO news(id, content, title) VALUES (1, 'Linija 9 od 12.01.2020 menja putanju do daljnjeg.','Promena linije 9');
 INSERT INTO news(id, content, title) VALUES (2, 'Redovi polazaka biće izmenjeni za prvi maj.','Prvomajski praznik');
@@ -115,4 +116,13 @@ INSERT INTO news(id, content, title) VALUES (7, 'Molimo sve putnike da se pridr�
 INSERT INTO news(id, content, title) VALUES (8, 'U autobusu ne sme raditi klima dok pandemija Korona virusa traje.','Klima');
 
 /* Linija BG */
-INSERT INTO route(id, name, description, city) VALUES (55, '55', 'Opis linije beograd', 'Beograd');
+INSERT INTO route(id, name, description, city) VALUES (55, '55', 'Opis linije 55 beograd', 'Beograd');
+
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (123, 44.814518, 20.435420, 'STANICA 1 BG', 55);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (1234, 44.814960, 20.452886, 'STANICA 2 BG', 55);
+
+INSERT INTO route(id, name, description, city) VALUES (56, '65', 'Opis linije 65 beograd', 'Beograd');
+
+
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (124, 44.814518, 20.435420, 'STANICA 1 BG', 56);
+INSERT INTO bus_stop(id, lat, lng, name, route_id) VALUES (1243, 44.814960, 20.452886, 'STANICA 2 BG', 56);
